@@ -2,6 +2,7 @@
 # ----- Importa e inicia pacotes
 import pygame, sys
 from settings import *
+from level import Level
 
 class Game():
     def __init__(self):
@@ -10,6 +11,8 @@ class Game():
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
         pygame.display.set_caption('NOSSO JOGO')
         self.clock = pygame.time.Clock()
+
+        self.level = Level()
 
     def run(self):
         # ===== Loop principal =====
@@ -23,6 +26,7 @@ class Game():
 
                 # ----- Gera saídas
             self.screen.fill((255, 255, 255))  # Preenche com a cor branca
+            self.level.run()
             # ----- Atualiza estado do jogo
             pygame.display.update()  # Mostra o novo frame para o jogador
             # ----- Limita a 60 frames por segundo
