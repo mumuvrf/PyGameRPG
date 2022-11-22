@@ -1,8 +1,10 @@
 # ===== Inicialização =====
 # ----- Importa e inicia pacotes
-import pygame, sys
+import pygame
+import sys
 from settings import *
 from level import Level
+
 
 class Game():
     def __init__(self):
@@ -31,6 +33,7 @@ class Game():
             pygame.display.update()  # Mostra o novo frame para o jogador
             # ----- Limita a 60 frames por segundo
             self.clock.tick(FPS)
+
 
 if __name__ == '__main__':
     game = Game()
