@@ -10,7 +10,7 @@ class Level:
         self.display_surface = pygame.display.get_surface() # Pega a tela principal 
 
         # Criando o grupo de todas as sprites
-        self.visible_sprites = pygame.sprite.Group()
+        self.visible_sprites = YSortCameraGroup()
         self.obstacle_sprites = pygame.sprite.Group()
 
         # Setup da sprite
@@ -25,10 +25,17 @@ class Level:
                 if col == 'x':
                     Tile((x, y), [self.visible_sprites, self.obstacle_sprites])
                 if col == 'p':
-                    self.player = Player((x, y), [self.visible_sprites])
+                    self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites)
 
 
     def run(self):
         # Atualizar e desenhar o jogo
         self.visible_sprites.draw(self.display_surface)
         self.visible_sprites.update()
+
+    
+class YSortCameraGroup(pygame.sprite.Group):
+    def __init__(self):
+
+        # Configuração geral
+        super().__init__()
