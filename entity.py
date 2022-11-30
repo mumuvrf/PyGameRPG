@@ -1,8 +1,9 @@
 import pygame
+from math import sin
 
 class Entity(pygame.sprite.Sprite):
-    def __init__(self, groups):
-        super().__init__(groups)
+    def _init_(self, groups):
+        super()._init_(groups)
         self.frame_index = 0
         self.animation_speed = 0.15
         self.direction = pygame.math.Vector2()
@@ -38,3 +39,10 @@ class Entity(pygame.sprite.Sprite):
                     if self.direction.y < 0:  # se movendo para cima
                         # a extrema superior do nosso Player coincide com a extrema inferior do obstáculo que se está colidindo
                         self.hitbox.top = sprite.hitbox.bottom
+
+    def wave_value(self):
+        value = sin(pygame.time.get_ticks())
+        if value >= 0:
+            return 255
+        else:
+            return 0
