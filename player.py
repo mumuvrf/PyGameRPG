@@ -5,8 +5,8 @@ from entity import Entity
 
 
 class Player(Entity):
-    def _init_(self, pos, grupo, obstacle_sprites, create_attack, destroy_attack, create_magic):
-        super()._init_(grupo)
+    def __init__(self, pos, grupo, obstacle_sprites, create_attack, destroy_attack, create_magic):
+        super().__init__(grupo)
         self.image = pygame.image.load('graphics/test/player.png').convert_alpha()
         self.rect = self.image.get_rect(topleft=pos)
         self.hitbox = self.rect.inflate(0, -26)

@@ -2,8 +2,8 @@ import pygame
 
 
 class Weapon(pygame.sprite.Sprite):
-    def _init_(self, player, grupo):
-        super()._init_(grupo)
+    def __init__(self, player, grupo):
+        super().__init__(grupo)
         self.sprite_type = 'weapon'
         direction = player.status.split('_')[0]
 

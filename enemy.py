@@ -4,10 +4,10 @@ from entity import Entity
 from support import *
 
 class Enemy(Entity):
-    def _init_(self, monster_name, pos, groups, obstacle_sprites, damage_player):
+    def __init__(self, monster_name, pos, groups, obstacle_sprites, damage_player):
 
         # configuração geral
-        super()._init_(groups)
+        super().__init__(groups)
         self.sprite_type = 'enemy'
 
         # configuração dos gráficos

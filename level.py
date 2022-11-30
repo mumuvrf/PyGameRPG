@@ -10,7 +10,7 @@ from enemy import Enemy
 
 
 class Level:
-    def _init_(self):
+    def __init__(self):
 
         # Obter a janela de qualquer lugar
         self.display_surface = pygame.display.get_surface()  # Pega a tela principal
@@ -136,10 +136,10 @@ class Level:
 
 
 class YSortCameraGroup(pygame.sprite.Group):
-    def _init_(self):
+    def __init__(self):
 
         # Configuração geral
-        super()._init_()
+        super().__init__()
         self.display_surface = pygame.display.get_surface()
         self.half_width = self.display_surface.get_size()[0] // 2
         self.half_height = self.display_surface.get_size()[1] // 2
