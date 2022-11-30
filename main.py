@@ -11,10 +11,13 @@ class Game():
         # inicia pygame e cria janela, ou seja, gera tela principal
         pygame.init()
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT))
-        pygame.display.set_caption('NOSSO JOGO')
+        pygame.display.set_caption('VILLAGE WARRIOR')
         self.clock = pygame.time.Clock()
 
         self.level = Level()
+
+        main_sound = pygame.mixer.Sound('audio/main.ogg')
+        main_sound.play(loops = -1)
 
     def run(self):
         # ===== Loop principal =====
@@ -30,7 +33,7 @@ class Game():
                         self.level.toggle_menu()
 
                 # ----- Gera saídas
-            self.screen.fill((255, 255, 255))  # Preenche com a cor branca
+            self.screen.fill(WATER_COLOR)  # Preenche com a cor branca
             self.level.run()
             # ----- Atualiza estado do jogo
             pygame.display.update()  # Mostra o novo frame para o jogador
