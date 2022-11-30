@@ -25,6 +25,9 @@ class Game():
                 if event.type == pygame.QUIT:
                     pygame.quit()  # Função do PyGame que finaliza os recursos utilizados
                     sys.exit()  # Função do Python que finaliza o programa
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_m:
+                        self.level.toggle_menu()
 
                 # ----- Gera saídas
             self.screen.fill((255, 255, 255))  # Preenche com a cor branca
