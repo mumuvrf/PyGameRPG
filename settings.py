@@ -57,6 +57,7 @@ monster_data = {
 	'bamboo': {'health': 70,'exp':120,'damage':6,'attack_type': 'leaf_attack', 'attack_sound':'audio/attack/slash.wav', 'speed': 3, 'resistance': 3, 'attack_radius': 50, 'notice_radius': 300}}
 
 # Estados para controle do fluxo da aplicação
-INIT = 0
-GAME = 1
-QUIT = 2
+INIT1 = 0
+INIT2 = 1
+GAME = 2
+QUIT = 3

@@ -20,19 +20,36 @@ class Game():
         main_sound = pygame.mixer.Sound('audio/main.ogg')
         main_sound.play(loops = -1)
 
+        # variável de controle para os loop's
         self.loop = True
-        self.window = pygame.image.load('assets/penes_de_fundo.png').convert_alpha()
 
-        self.state = INIT
+        # janelas
+        self.window_init = pygame.image.load('assets/tela_inicial (1).png').convert_alpha()
+        self.window_end = pygame.image.load('assets/game_over (5).png').convert_alpha()
+        self.window_manual = pygame.image.load('assets/como_jogar.png').convert_alpha()
 
-        self.font = pygame.font.SysFont(None, 120)
-        self.text1 = self.font.render('WELCOME, VILLAGE WARRIOR', True, (255, 165, 0))
-        self.text3 = self.font.render('GAME OVER!', True, (255, 0, 0))
-        self.font2 = pygame.font.SysFont(None, 60)
-        self.text2 = self.font2.render('Press ENTER to start', True, (255, 255, 255))
-        self.text4 = self.font2.render('Pressione qualquer tecla para sair.', True, (255, 255, 255))
+        # estado inicial
+        self.state = INIT1
     
     def init_screen(self):
+        while self.loop:
+            # ----- Trata eventos
+            for event in pygame.event.get():
+                # ----- Verifica consequências
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_RETURN:
+                        self.state = INIT2
+                        self.loop = False
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    self.state = QUIT
+
+            self.screen.blit(self.window_init, self.screen_rect)
+            pygame.display.update()
+        self.loop = True
+        return self.state
+
+    def manual_screen(self):
         while self.loop:
             # ----- Trata eventos
             for event in pygame.event.get():
@@ -45,9 +62,7 @@ class Game():
                     pygame.quit()
                     self.state = QUIT
 
-            self.screen.blit(self.window, self.screen_rect)
-            self.screen.blit(self.text1, self.text1.get_rect(center=(WIDTH/2, HEIGHT/2.3)))
-            self.screen.blit(self.text2, self.text2.get_rect(center=(WIDTH/2, HEIGHT/1.2)))
+            self.screen.blit(self.window_manual, self.screen_rect)
             pygame.display.update()
         self.loop = True
         return self.state
@@ -62,15 +77,15 @@ class Game():
                 if event.type == pygame.QUIT:
                     pygame.quit()
 
-            self.screen.fill((0, 0, 0))
-            self.screen.blit(self.text3, self.text3.get_rect(center=(WIDTH/2, HEIGHT/2.3)))
-            self.screen.blit(self.text4, self.text4.get_rect(center=(WIDTH/2, HEIGHT/1.2)))
+            self.screen.blit(self.window_end, self.screen_rect)
             pygame.display.update()
 
     def run(self):
         while self.state != QUIT:
-            if self.state == INIT:
+            if self.state == INIT1:
                 self.state = self.init_screen()
+            elif self.state == INIT2:
+                self.state = self.manual_screen()
             elif self.state == GAME:
                 self.state = self.gaming()
         self.end_screen()
