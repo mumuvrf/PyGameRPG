@@ -167,8 +167,12 @@ class Level:
             self.visible_sprites.update()
             self.visible_sprites.enemy_update(self.player)
             self.player_attack_logic()
-        
 
+    def check_death_player(self):
+        if self.player.health <= 0:
+            self.player.health = 0
+            self.player.dead = True
+        return self.player.dead
 
 class YSortCameraGroup(pygame.sprite.Group):
     def __init__(self):

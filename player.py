@@ -55,6 +55,9 @@ class Player(Entity):
         self.weapon_attack_sound = pygame.mixer.Sound('audio/sword.wav')
         self.weapon_attack_sound.set_volume(0.4)
 
+        # morte
+        self.dead = False
+
     def import_player_assets(self):
         character_path = 'graphics/player/'
         self.animations = {
@@ -70,19 +73,19 @@ class Player(Entity):
     def input(self):
         keys = pygame.key.get_pressed()
         # comandos de movimento (entradas)
-        if keys[pygame.K_w]:
+        if keys[pygame.K_UP]:
             self.direction.y = -1
             self.status = 'up'
-        elif keys[pygame.K_s]:
+        elif keys[pygame.K_DOWN]:
             self.direction.y = 1
             self.status = 'down'
         else:
             self.direction.y = 0
 
-        if keys[pygame.K_d]:
+        if keys[pygame.K_RIGHT]:
             self.direction.x = 1
             self.status = 'right'
-        elif keys[pygame.K_a]:
+        elif keys[pygame.K_LEFT]:
             self.direction.x = -1
             self.status = 'left'
         else:
