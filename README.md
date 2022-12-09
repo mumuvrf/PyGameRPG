@@ -49,3 +49,6 @@ OBS: Para fins do projeto de DesSoft, fizemos apenas uma fase teste de treinamen
 ### Sprites
 
 - Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack?download
+- Vídeo de referência(*): https://www.youtube.com/watch?v=QU1pPzEGrqw
+
+(*): Utilizado para fins de aprendizado, nenhum trecho de código foi copiado. Programamos assistindo o vídeo, entendemos os conceitos e modificamos partes.
