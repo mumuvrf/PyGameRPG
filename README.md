@@ -6,6 +6,10 @@
 - Samuel Jabes Costa Cavalcanti, a.k.a. Samu
 - Vinícius Rodrigues de Freitas, a.k.a. Mumu
 
+## Vídeo do jogo
+
+https://youtu.be/SfloB2VumJ0
+
 ## História
 
 Molly é uma garota que sempre teve o desejo de ser uma guerreira, como as grandes Amazonas. Entretanto, na sua vila não é comum que hajam guerreiras mulheres, as mulheres são comumente curandeiras e cuidadoras. Por este motivo ela nunca obteve apoio que precisava para sua empreitada, sendo forçada a deixar seu sonho continuar a ser apenas isso, um sonho.
@@ -45,3 +49,6 @@ OBS: Para fins do projeto de DesSoft, fizemos apenas uma fase teste de treinamen
 ### Sprites
 
 - Pixel Boy: https://pixel-boy.itch.io/ninja-adventure-asset-pack?download
+- Vídeo de referência(*): https://www.youtube.com/watch?v=QU1pPzEGrqw
+
+(*): Utilizado para fins de aprendizado, nenhum trecho de código foi copiado. Programamos assistindo o vídeo, entendemos os conceitos e modificamos partes.
