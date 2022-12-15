@@ -24,8 +24,8 @@ class Game():
         self.loop = True
 
         # janelas
-        self.window_init = pygame.image.load('assets/tela_inicial (1).png').convert_alpha()
-        self.window_end = pygame.image.load('assets/game_over (5).png').convert_alpha()
+        self.window_init = pygame.image.load('assets/tela_inicial_presskey.png').convert_alpha()
+        self.window_end = pygame.image.load('assets/game_over_presskey.png').convert_alpha()
         self.window_manual = pygame.image.load('assets/como_jogar.png').convert_alpha()
 
         # estado inicial
